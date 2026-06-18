@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>fac2b1bc-d3e1-40c6-b316-3db27aff8041</groupId>
 	<artifactId>batchprocess</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
@@ -29,6 +31,37 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<cloudhub2Deployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<provider>MC</provider>
+
+						<!-- Valid Mule version -->
+						<muleVersion>4.11.0</muleVersion>
+						<releaseChannel>EDGE</releaseChannel>
+						<javaVersion>17</javaVersion>
+
+						<username>tedy_1234</username>
+						<password>Tedy_1234</password>
+
+						<businessGroupId>fac2b1bc-d3e1-40c6-b316-3db27aff8041</businessGroupId>
+						<environment>Sandbox</environment>
+
+						<!-- Ensure this matches your Runtime Manager -->
+						<target>Cloudhub-US-East-2</target>
+
+						<applicationName>on-error-raise</applicationName>
+						<replicas>1</replicas>
+						<vCores>0.1</vCores>
+
+						<deploymentSettings>
+							<lastMileSecurity>false</lastMileSecurity>
+							<forwardSslSession>false</forwardSslSession>
+							<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+						</deploymentSettings>
+
+					</cloudhub2Deployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -80,5 +113,12 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
+	<distributionManagement>
+		<repository>
+			<id>anypoint-exchange-v3</id>
+			<name>Anypoint Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/fac2b1bc-d3e1-40c6-b316-3db27aff8041/maven</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
 </project>
