@@ -1,0 +1,67 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<!--  =========================  -->
+<!--      SERVER CREDENTIALS     -->
+<!--  =========================  -->
+<servers>
+<!--  MuleSoft Enterprise Repository (EE)  -->
+<server>
+<id>mulesoft-ee</id>
+<username>29601a0b180a4d98966972db1621931c</username>
+<password>216523F451AE4Ea6bf331f0E8B897B63</password>
+</server>
+<!--  Exchange (USED BY MAVEN 3.9.x)  -->
+<server>
+<id>anypoint-exchange-v3</id>
+<username>~~~Client~~~</username>
+<password>29601a0b180a4d98966972db1621931c~?~216523F451AE4Ea6bf331f0E8B897B63</password>
+</server>
+</servers>
+<!--  =========================  -->
+<!--           PROFILES          -->
+<!--  =========================  -->
+<profiles>
+<profile>
+<id>mulesoft-repos</id>
+<repositories>
+<!--  MuleSoft EE Repository  -->
+<repository>
+<id>mulesoft-ee</id>
+<name>MuleSoft Enterprise Repository</name>
+<url>https://repository.mulesoft.org/nexus-ee/content/groups/public-ee/</url>
+<releases>
+<enabled>true</enabled>
+</releases>
+<snapshots>
+<enabled>false</enabled>
+</snapshots>
+</repository>
+<!--  MuleSoft Public Repo  -->
+<repository>
+<id>mulesoft-public</id>
+<url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+</repository>
+<!--  Maven Central  -->
+<repository>
+<id>central</id>
+<url>https://repo.maven.apache.org/maven2/</url>
+</repository>
+</repositories>
+<pluginRepositories>
+<pluginRepository>
+<id>mulesoft-plugins</id>
+<url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+</pluginRepository>
+<pluginRepository>
+<id>central</id>
+<url>https://repo.maven.apache.org/maven2/</url>
+</pluginRepository>
+</pluginRepositories>
+</profile>
+</profiles>
+<!--  =========================  -->
+<!--      ACTIVATE PROFILE       -->
+<!--  =========================  -->
+<activeProfiles>
+<activeProfile>mulesoft-repos</activeProfile>
+</activeProfiles>
+</settings>
